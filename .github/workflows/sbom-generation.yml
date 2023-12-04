@@ -7,5 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: CycloneDX Python Generate SBOM
+    - name: "CycloneDX Python Generate SBOM"
       uses: CycloneDX/gh-python-generate-sbom@v2.0.0
+    - name: "Upload artifact"
+      uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # v3.1.0
+      with:
+        name: CycloneDX SBOM
+        path: bom.xml
+        retention-days: 5
