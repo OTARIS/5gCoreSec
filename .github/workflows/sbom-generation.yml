@@ -1,0 +1,11 @@
+name: SBOM Generation
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: CycloneDX Python Generate SBOM
+      uses: CycloneDX/gh-python-generate-sbom@v2.0.0
